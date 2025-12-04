@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVESTOR | الإعدادات</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* تنسيقات إضافية خاصة بصفحة الإعدادات */
+        .settings-page-content {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 30px;
+        }
+
+        .settings-sidebar {
+            width: 200px;
+            flex-shrink: 0;
+            padding-left: 15px;
+            border-left: 1px solid #eee;
+        }
+
+        .settings-sidebar a {
+            display: block;
+            padding: 10px 0;
+            color: #555;
+            font-weight: 500;
+            border-right: 3px solid transparent;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+        
+        .settings-sidebar a:hover {
+            color: #007bff;
+        }
+
+        .settings-sidebar a.active {
+            color: #007bff;
+            border-right: 3px solid #007bff;
+            font-weight: bold;
+        }
+
+        .settings-main {
+            flex-grow: 1;
+        }
+
+        .settings-main h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* تنسيقات النموذج (Form) */
+        .settings-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1; /* لجعل العنصر يأخذ عرض العمودين */
+        }
+        
+        .input-group {
+            margin-bottom: 0; /* إلغاء الهامش السفلي الافتراضي لـ input-group */
+        }
+
+        .save-btn-container {
+            grid-column: 1 / -1;
+            padding-top: 10px;
+            text-align: left;
+        }
+
+        .settings-main .cta-primary {
+            width: 200px;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* المربع التحذيري */
+        .danger-zone {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #dc3545;
+            background-color: #fcebeb;
+            border-radius: 8px;
+            grid-column: 1 / -1;
+        }
+        
+        .danger-zone button {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* تجاوب الموبايل */
+        @media (max-width: 768px) {
+            .settings-page-content {
+                flex-direction: column;
+                margin: 20px 10px;
+                padding: 15px;
+            }
+            .settings-sidebar {
+                width: 100%;
+                border-left: none;
+                border-bottom: 1px solid #eee;
+                padding-left: 0;
+            }
+            .settings-sidebar nav {
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .settings-sidebar a {
+                border-right: none;
+                border-bottom: 3px solid transparent;
+                padding: 10px 15px;
+            }
+            .settings-sidebar a.active {
+                border-bottom: 3px solid #007bff;
+                border-right: none;
+            }
+            .settings-form {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="logo"><a href="index.html">INVESTOR</a></div>
+        <div class="user-profile">
+            <span class="user-name">أهلاً، سارة!</span>
+            <button class="logout-btn">خروج</button>
+        </div>
+    </header>
+
+    <main class="settings-page-content">
+        
+        <aside class="settings-sidebar">
+            <nav>
+                <a href="#account" class="active">تفاصيل الحساب</a>
+                <a href="#profile">تعديل الملف الشخصي</a>
+                <a href="#notifications">التنبيهات</a>
+                <a href="#security">الأمان وكلمة المرور</a>
+            </nav>
+        </aside>
+
+        <section class="settings-main">
+            
+            <div id="account">
+                <h3>تفاصيل الحساب الأساسية</h3>
+                
+                <form class="settings-form">
+                    
+                    <div class="input-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" value="سارة محمد" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" value="sara.m@company.com" required>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="phone">رقم الهاتف (للتواصل)</label>
+                        <input type="tel" id="phone" value="+966 50 123 4567">
+                    </div>
+                    
+                    <div class="input-group full-width">
+                        <label for="role">دور المستخدم (للاطلاع فقط)</label>
+                        <input type="text" id="role" value="رائدة أعمال (صاحبة مشروع)" disabled>
+                    </div>
+
+                    <div class="save-btn-container">
+                         <button type="submit" class="cta-primary">حفظ التغييرات</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="security" style="margin-top: 40px;">
+                <h3>الأمان وكلمة المرور</h3>
+                
+                <form class="settings-form">
+                    <div class="input-group full-width">
+                        <label for="current_password">كلمة المرور الحالية</label>
+                        <input type="password" id="current_password" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="new_password">كلمة المرور الجديدة</label>
+                        <input type="password" id="new_password">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirm_password">تأكيد كلمة المرور الجديدة</label>
+                        <input type="password" id="confirm_password">
+                    </div>
+
+                    <div class="save-btn-container">
+                         <button type="submit" class="cta-primary">تغيير كلمة المرور</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="danger-zone">
+                <h4>⚠️ منطقة الخطر</h4>
+                <p>يؤدي هذا الإجراء إلى حذف جميع بياناتك ومشاريعك من المنصة بشكل دائم ولا يمكن التراجع عنه.</p>
+                <button>حذف الحساب نهائيًا</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 منصة INVESTOR. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

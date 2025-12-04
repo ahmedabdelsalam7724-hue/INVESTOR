@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVESTOR | تقديم عرض المشروع الجديد</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .submit-container {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .submit-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-dark);
+        }
+        .submit-card h1 {
+            color: var(--color-primary);
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border-dark);
+            padding-bottom: 10px;
+        }
+        /* تنسيق التبويبات للنموذج المقسم */
+        .nav-pills .nav-link {
+            color: var(--color-muted);
+            background-color: var(--border-dark);
+            margin: 0 5px;
+            font-weight: 500;
+        }
+        .nav-pills .nav-link.active {
+            color: var(--bg-dark) !important;
+            background-color: var(--color-primary) !important;
+        }
+        .tab-content {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="index.html">INVESTOR</a></div>
+        <nav class="nav">
+            <a href="dashboard.html" class="btn btn-outline-dark me-2">لوحة التحكم</a>
+            <a href="index.html" class="cta-button">الرئيسية</a>
+        </nav>
+    </header>
+
+    <div class="submit-container">
+        
+        <div class="submit-card">
+            
+            <h1>🚀 تقديم عرض استثماري جديد</h1>
+            <p class="text-muted mb-4">أكمل الأقسام التالية بعناية. ستظهر هذه المعلومات للمستثمرين المسجلين لدينا.</p>
+            
+            <form action="process_pitch.php" method="POST" enctype="multipart/form-data">
+                
+                <div class="d-flex align-items-start">
+                    
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="min-width: 180px;">
+                        <button class="nav-link active" id="v-pills-basic-tab" data-bs-toggle="pill" data-bs-target="#v-pills-basic" type="button" role="tab" aria-controls="v-pills-basic" aria-selected="true">1. الأساسيات</button>
+                        <button class="nav-link" id="v-pills-problem-tab" data-bs-toggle="pill" data-bs-target="#v-pills-problem" type="button" role="tab" aria-controls="v-pills-problem" aria-selected="false">2. المشكلة والحل</button>
+                        <button class="nav-link" id="v-pills-market-tab" data-bs-toggle="pill" data-bs-target="#v-pills-market" type="button" role="tab" aria-controls="v-pills-market" aria-selected="false">3. التمويل والماليات</button>
+                        <button class="nav-link" id="v-pills-files-tab" data-bs-toggle="pill" data-bs-target="#v-pills-files" type="button" role="tab" aria-controls="v-pills-files" aria-selected="false">4. المرفقات</button>
+                    </div>
+
+                    <div class="tab-content w-100" id="v-pills-tabContent">
+                        
+                        <div class="tab-pane fade show active" id="v-pills-basic" role="tabpanel" aria-labelledby="v-pills-basic-tab">
+                            <h4 class="text-white mb-4">🌟 معلومات العرض الرئيسية</h4>
+                            
+                            <div class="mb-3">
+                                <label for="pitchTitle" class="form-label text-muted">عنوان العرض</label>
+                                <input type="text" class="form-control form-control-lg" id="pitchTitle" name="title" required placeholder="مثل: تطبيق 'بياناتي' لتحليل السوق">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pitchType" class="form-label text-muted">نوع العرض</label>
+                                <select class="form-select form-select-lg" id="pitchType" name="type" required>
+                                    <option value="" selected disabled>اختر...</option>
+                                    <option value="company">شركة قائمة (تبحث عن نمو)</option>
+                                    <option value="idea">فكرة ريادية (تبحث عن تمويل تأسيسي)</option>
+                                    <option value="patent">براءة اختراع (تبحث عن ترخيص/تصنيع)</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pitchSector" class="form-label text-muted">القطاع</label>
+                                <input type="text" class="form-control form-control-lg" id="pitchSector" name="sector" required placeholder="مثل: FinTech, EdTech, الزراعة والتقنية">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pitchStage" class="form-label text-muted">مرحلة المشروع الحالية</label>
+                                <input type="text" class="form-control form-control-lg" id="pitchStage" name="stage" required placeholder="مثل: MVP جاهز، تمويل أولي، توسع إقليمي">
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-problem" role="tabpanel" aria-labelledby="v-pills-problem-tab">
+                            <h4 class="text-white mb-4">💡 القيمة المقترحة (المشكلة، الحل، نموذج العمل)</h4>
+
+                            <div class="mb-3">
+                                <label for="problem" class="form-label text-muted">المشكلة التي يحلها مشروعك (بإيجاز)</label>
+                                <textarea class="form-control" id="problem" name="problem" rows="4" required placeholder="ما هو الألم الذي يشعر به عميلك؟"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="solution" class="form-label text-muted">الحل المبتكر</label>
+                                <textarea class="form-control" id="solution" name="solution" rows="4" required placeholder="كيف يقضي منتجك على هذه المشكلة؟"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="businessModel" class="form-label text-muted">نموذج العمل وكيفية تحقيق الإيرادات</label>
+                                <textarea class="form-control" id="businessModel" name="business_model" rows="3" required placeholder="مثل: اشتراكات شهرية، عمولات، بيع لمرة واحدة"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-market" role="tabpanel" aria-labelledby="v-pills-market-tab">
+                            <h4 class="text-white mb-4">💰 طلب التمويل والتقييم</h4>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6 mb-3">
+                                    <label for="fundingAmount" class="form-label text-muted">مبلغ التمويل المطلوب ($)</label>
+                                    <input type="number" class="form-control form-control-lg" id="fundingAmount" name="funding_amount" required min="1000" placeholder="مثال: 200000">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="equity" class="form-label text-muted">النسبة المطلوبة مقابل هذا المبلغ (%)</label>
+                                    <input type="number" class="form-control form-control-lg" id="equity" name="equity" required min="1" max="50" placeholder="مثال: 15">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="preMoneyValuation" class="form-label text-muted">التقييم قبل التمويل (Pre-Money Valuation)</label>
+                                <input type="text" class="form-control form-control-lg" id="preMoneyValuation" name="pre_money_valuation" placeholder="اختياري - مثال: 1,130,000$">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="useOfFunds" class="form-label text-muted">كيف سيُستخدم التمويل بالتفصيل؟</label>
+                                <textarea class="form-control" id="useOfFunds" name="use_of_funds" rows="3" required placeholder="تطوير، تسويق، توظيف، مصاريف تشغيلية..."></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-files" role="tabpanel" aria-labelledby="v-pills-files-tab">
+                            <h4 class="text-white mb-4">📎 المرفقات والوثائق الهامة</h4>
+
+                            <div class="mb-3">
+                                <label for="pitchDeckFile" class="form-label text-muted">ملف عرض المستثمر (Pitch Deck PDF)</label>
+                                <input class="form-control" type="file" id="pitchDeckFile" name="pitch_deck_file" accept=".pdf" required>
+                                <div class="form-text text-muted small">يفضل أن يكون ملف PDF لا يتجاوز 10 صفحات.</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="financialsFile" class="form-label text-muted">البيانات المالية والتوقعات (Excel/PDF)</label>
+                                <input class="form-control" type="file" id="financialsFile" name="financials_file" accept=".pdf,.xls,.xlsx">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="teamFile" class="form-label text-muted">سير الفريق الذاتية / معلومات الفريق</label>
+                                <textarea class="form-control" id="teamFile" name="team_details" rows="3" placeholder="أضف معلومات موجزة عن المؤسسين وخبراتهم الرئيسية."></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <hr class="mt-5 mb-4">
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">✅ إرسال العرض للمراجعة</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
