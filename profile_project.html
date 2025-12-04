@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVESTOR | ملف المشروع: تطبيق بياناتي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* (يمكنك استخدام نفس تنسيقات CSS في ملف profile_investor.html، أو وضعها في style.css) */
+        
+        .profile-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .project-details-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .project-details-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .project-details-header .tag {
+             background-color: #1abc9c;
+             font-size: 1rem;
+             padding: 5px 15px;
+             border-radius: 5px;
+             color: white;
+             font-weight: bold;
+        }
+
+        .project-content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr; 
+            gap: 30px;
+        }
+
+        .main-content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+        }
+        .member-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-left: 15px;
+        }
+        
+        .document-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #eafaea;
+            border-left: 5px solid #28a745;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .document-link a {
+            color: #28a745;
+            text-decoration: underline;
+        }
+        
+        /* تجاوب للموبايل */
+        @media (max-width: 768px) {
+            .project-content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="index.html">INVESTOR</a></div>
+        <nav class="nav">
+            <a href="investor_dashboard.html" class="cta-button">لوحة المستثمر</a>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        
+        <div class="project-details-header">
+            <h1>تطبيق "بياناتي" لتحليل السوق</h1>
+            <span class="tag">التقنية المالية (FinTech)</span>
+        </div>
+
+        <div class="project-content-grid">
+            
+            <div class="main-content-area">
+                <div class="section-box">
+                    <h3>قصة المشروع ورؤيته</h3>
+                    <p style="color: #555;">"بياناتي" هي منصة SaaS (البرمجيات كخدمة) تهدف إلى سد الفجوة في التحليل المالي لسوق الأسهم الإقليمية. نستخدم نموذج تعلم آلي (Machine Learning) لتوفير تنبؤات وتقارير لحظية للمستثمرين الأفراد والمؤسسات الصغيرة، مما يقلل من حاجز الدخول للاستثمار الذكي.</p>
+                </div>
+                
+                <div class="section-box">
+                    <h3>أعضاء الفريق المؤسس</h3>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar"></div>
+                        <div>
+                            <strong>محمد علي</strong> (الرئيس التنفيذي/CTO)
+                            <p style="font-size: 0.9rem; color: #777;">خبير في تطوير البرمجيات والذكاء الاصطناعي.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar"></div>
+                        <div>
+                            <strong>هند فهد</strong> (الرئيس التنفيذي للعمليات/COO)
+                            <p style="font-size: 0.9rem; color: #777;">خبرة 10 سنوات في إدارة الأعمال والعمليات التشغيلية.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-box">
+                    <h3>البيانات المالية والمؤشرات</h3>
+                    <p><strong>الإيرادات الشهرية الحالية:</strong> 15,000 $</p>
+                    <p><strong>معدل نمو المستخدمين (MoM):</strong> 12%</p>
+                    <p><strong>متوسط تكلفة اكتساب العميل (CAC):</strong> 15 $</p>
+                    <p style="margin-top: 10px; font-weight: bold; color: #dc3545;">ملاحظة: البيانات المالية الكاملة متاحة فقط بعد التعبير عن الاهتمام.</p>
+                </div>
+            </div>
+            
+            <div class="sidebar-details">
+                <div class="section-box" style="border-right-color: #28a745;">
+                    <h3>ملخص التمويل</h3>
+                    <p style="font-size: 1.1rem;">
+                        <strong>التمويل المطلوب:</strong> <span style="font-size: 1.5rem; color: #007bff; font-weight: bold;">$200,000</span>
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <strong>مقابل حصة:</strong> 15%
+                    </p>
+                    <p>
+                        <strong>مرحلة التمويل:</strong> Seed (البذور)
+                    </p>
+                    <button class="cta-primary" style="width: 100%; margin-top: 20px;">✅ إبداء الاهتمام والطلب على الوثائق</button>
+                </div>
+
+                <div class="section-box" style="margin-top: 30px;">
+                    <h3>وثائق المشروع المتاحة</h3>
+                    <div class="document-link">
+                        <span>دراسة الجدوى والنموذج المالي</span>
+                        <a href="#">تحميل</a>
+                    </div>
+                    <div class="document-link">
+                        <span>ملخص العرض (Pitch Deck)</span>
+                        <a href="#">تحميل</a>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #999; margin-top: 10px;">*الوصول إلى الوثائق قد يتطلب إذن المستثمر.</p>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 منصة INVESTOR. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVESTOR | تسجيل مستخدم جديد</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="index.html">INVESTOR</a></div>
+        <nav class="nav">
+            <a href="#">تسجيل الدخول</a>
+        </nav>
+    </header>
+
+    <section class="register-section">
+        <h2>انضم إلى مجتمع INVESTOR</h2>
+        
+        <div class="role-selection" id="roleSelection">
+            <h3>من أنت؟</h3>
+            <div class="role-options">
+                <button class="role-card" data-role="investor">
+                    <h4>أنا مستثمر 💰</h4>
+                    <p>أبحث عن فرص استثمارية لتمويلها وتنميتها.</p>
+                </button>
+                <button class="role-card" data-role="entrepreneur">
+                    <h4>أنا صاحب فكرة/شركة 🚀</h4>
+                    <p>أبحث عن تمويل أو شريك لتطوير مشروعي أو براءة اختراعي.</p>
+                </button>
+            </div>
+        </div>
+        
+        <form class="registration-form hidden" id="registrationForm">
+            <h3 id="formTitle">تسجيل مستثمر جديد</h3> 
+            
+            <div class="input-group">
+                <label for="fullName">الاسم الكامل / اسم الشركة</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="confirmPassword">تأكيد كلمة المرور</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">أوافق على <a href="#">الشروط والأحكام</a></label>
+            </div>
+            
+            <button type="submit" class="cta-primary">إكمال التسجيل</button>
+            
+            <p class="login-link">
+                هل لديك حساب بالفعل؟ <a href="#">سجل الدخول</a>
+            </p>
+        </form>
+
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 منصة INVESTOR. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        const roleSelection = document.getElementById('roleSelection');
+        const registrationForm = document.getElementById('registrationForm');
+        const formTitle = document.getElementById('formTitle');
+        const roleButtons = document.querySelectorAll('.role-card');
+
+        roleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const role = button.getAttribute('data-role');
+                
+                // 1. تحديث عنوان النموذج
+                if (role === 'investor') {
+                    formTitle.textContent = 'تسجيل مستثمر جديد';
+                } else {
+                    formTitle.textContent = 'تسجيل صاحب فكرة/شركة جديدة';
+                }
+
+                // 2. إخفاء قسم اختيار الدور وإظهار النموذج
+                roleSelection.classList.add('hidden');
+                registrationForm.classList.remove('hidden');
+
+                // ملاحظة: في المرحلة التالية (PHP)، سنحتاج لإضافة حقل مخفي (Hidden Input)
+                // داخل النموذج لتمرير قيمة الدور (investor أو entrepreneur) إلى الواجهة الخلفية.
+            });
+        });
+    </script>
+
+</body>
+</html>

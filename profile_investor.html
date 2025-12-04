@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVESTOR | ملف المستثمر: أ. عبد العزيز</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* تنسيقات إضافية خاصة بصفحات الملف الشخصي */
+        .profile-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin-left: 20px;
+            overflow: hidden;
+            border: 4px solid #007bff;
+        }
+        
+        /* يمكنك استبدال العنصر بصورة */
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            color: #777;
+            font-size: 1rem;
+        }
+        
+        .profile-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* المحتوى الرئيسي والجانبي */
+            gap: 30px;
+        }
+
+        .section-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border-right: 4px solid #007bff;
+        }
+
+        .section-box h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .tags-list span {
+            display: inline-block;
+            background-color: #1abc9c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .stat-item .value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        /* تجاوب للموبايل */
+        @media (max-width: 768px) {
+            .profile-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            .profile-content {
+                grid-template-columns: 1fr;
+            }
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-avatar {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+            .stats-grid {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="index.html">INVESTOR</a></div>
+        <nav class="nav">
+            <a href="investor_dashboard.html" class="cta-button">لوحة التحكم</a>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        
+        <div class="profile-header">
+            <div class="profile-avatar">
+                </div>
+            <div class="profile-info">
+                <h1>أ. عبد العزيز الراجحي</h1>
+                <p>مستثمر ملاك (Angel Investor) | المملكة العربية السعودية</p>
+                <button class="cta-primary" style="margin-top: 15px;">إرسال رسالة</button>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            
+            <div class="main-details">
+                <div class="section-box">
+                    <h3>نبذة عن المستثمر</h3>
+                    <p style="color: #555;">أكثر من 15 عامًا من الخبرة في الاستثمار بالشركات الناشئة في مراحلها المبكرة (Seed و Series A). أركز على الشركات التي تحقق نموًا سريعًا وتستخدم التكنولوجيا لحل مشكلات السوق الأساسية. أبحث عن مؤسسين لديهم رؤية واضحة والتزام قوي.</p>
+                </div>
+                
+                <div class="section-box">
+                    <h3>سجل الاستثمارات الرئيسية (3 شركات)</h3>
+                    <ul>
+                        <li>شركة "نمو" للتقنية المالية (تخارج ناجح 2023).</li>
+                        <li>تطبيق "وِجهة" لحجز السفر (قيد النمو).</li>
+                        <li>منصة "منزلي" للتجارة الإلكترونية العقارية (تأسيس).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="sidebar-details">
+                <div class="section-box">
+                    <h3>إحصائيات الاستثمار</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="value">18</span>
+                            <span>استثمار نشط</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="value">3</span>
+                            <span>تخارج ناجح</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-box" style="margin-top: 30px;">
+                    <h3>القطاعات المفضلة</h3>
+                    <div class="tags-list">
+                        <span>التقنية المالية</span>
+                        <span>الذكاء الاصطناعي</span>
+                        <span>التعليم الإلكتروني</span>
+                        <span>التجارة الإلكترونية (B2B)</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 منصة INVESTOR. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVESTOR | عرض شركتك للبيع</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .submit-container {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .submit-header-neon {
+            color: var(--color-success);
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(0, 209, 161, 0.5);
+            border-bottom: 2px solid var(--border-dark);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .form-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="index.html">INVESTOR</a></div>
+        <nav class="nav">
+            <a href="acquisitions.html" class="btn btn-outline-dark me-2">تصفح الشركات المعروضة</a>
+            <a href="dashboard.html" class="cta-button">لوحة التحكم</a>
+        </nav>
+    </header>
+
+    <div class="submit-container">
+        
+        <h1 class="submit-header-neon text-center">عرض شركتك للبيع والاستحواذ</h1>
+        <p class="text-center text-muted mb-5">يرجى ملء النموذج بدقة لعرض شركتك على شبكة المشترين والمستحوذين لدينا.</p>
+
+        <div class="form-card">
+            <form action="process_sell_company.php" method="POST">
+                
+                <h4 class="text-white mb-3">1. بيانات الشركة الأساسية</h4>
+                <div class="mb-3">
+                    <label for="companyName" class="form-label">اسم الشركة</label>
+                    <input type="text" class="form-control" id="companyName" name="company_name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sector" class="form-label">القطاع</label>
+                    <select class="form-select" id="sector" name="sector" required>
+                        <option selected disabled>اختر القطاع...</option>
+                        <option value="FinTech">التقنية المالية (FinTech)</option>
+                        <option value="EdTech">التقنية التعليمية (EdTech)</option>
+                        <option value="E-commerce">التجارة الإلكترونية</option>
+                        <option value="Software">تطوير البرمجيات</option>
+                        <option value="Other">غير ذلك</option>
+                    </select>
+                </div>
+
+                <hr class="my-4" style="border-color: var(--border-dark);">
+                
+                <h4 class="text-white mb-3">2. التقييم والبيانات المالية</h4>
+                
+                <div class="mb-3">
+                    <label for="marketValue" class="form-label">القيمة السوقية المطلوبة للبيع ($)</label>
+                    <input type="number" class="form-control" id="marketValue" name="market_value" required placeholder="مثال: 5000000 (لـ 5 مليون دولار)">
+                    <div class="form-text text-muted small">هذه هي القيمة الإجمالية التي تطلبها لبيع الشركة.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="annualProfits" class="form-label">الأرباح السنوية الصافية للعام الماضي ($)</label>
+                    <input type="number" class="form-control" id="annualProfits" name="annual_profits" required placeholder="مثال: 800000">
+                    <div class="form-text text-muted small">صافي الأرباح المحقق في آخر سنة مالية.</div>
+                </div>
+
+                <hr class="my-4" style="border-color: var(--border-dark);">
+
+                <h4 class="text-white mb-3">3. تفاصيل البيع والتشغيل</h4>
+                
+                <div class="mb-3">
+                    <label for="saleReason" class="form-label">أسباب البيع</label>
+                    <textarea class="form-control" id="saleReason" name="sale_reason" rows="3" required placeholder="اشرح بوضوح سبب عرض الشركة للبيع (مثل: التخارج، أو الحاجة لشريك استراتيجي، أو لأسباب شخصية)."></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="companyTeam" class="form-label">هيكل فريق الشركة</label>
+                    <textarea class="form-control" id="companyTeam" name="company_team" rows="3" required placeholder="أذكر عدد الموظفين الدائمين، التقسيم الوظيفي (تقني، إداري، تسويق)، وهل الفريق مستعد للاستمرار مع المالك الجديد."></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="companyAssets" class="form-label">عناصر الشركة الأساسية</label>
+                    <textarea class="form-control" id="companyAssets" name="company_assets" rows="4" required placeholder="أذكر الأصول الرئيسية مثل: قاعدة بيانات العملاء، براءات الاختراع، الكود المصدري، العلامة التجارية، العقود الحصرية، الأجهزة والمعدات."></textarea>
+                </div>
+
+                <div class="form-check my-4">
+                    <input class="form-check-input" type="checkbox" value="" id="disclosureCheck" required>
+                    <label class="form-check-label text-muted" for="disclosureCheck">
+                        أقر بأنني على علم بأن عملية البيع ستتم خارج منصة INVESTOR، وأن المنصة مجرد وسيلة لعرض الفرصة.
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-success w-100 mt-3">✅ مراجعة ونشر العرض</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

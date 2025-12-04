@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVESTOR | عروضي الاستثمارية</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .dashboard-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-header-neon {
+            color: var(--color-primary);
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+            border-bottom: 2px solid var(--border-dark);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .table-dark-neon {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+        }
+        .table-dark-neon thead th {
+            color: var(--color-primary);
+            border-color: var(--border-dark);
+        }
+        .table-dark-neon tbody tr {
+            transition: background-color 0.3s;
+        }
+        .table-dark-neon tbody tr:hover {
+            background-color: #3d3d5e;
+        }
+        .status-badge {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo"><a href="index.html">INVESTOR</a></div>
+        <nav class="nav">
+            <a href="submit_pitch.html" class="btn btn-primary me-2">🚀 تقديم عرض جديد</a>
+            <a href="logout.php" class="btn btn-outline-dark">خروج</a>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        
+        <h1 class="section-header-neon">💼 عروضي الاستثمارية المرسلة</h1>
+        
+        <div class="alert alert-info" role="alert" style="background-color: #3d3d5e; border-color: var(--color-primary);">
+            <p class="mb-0 text-white">إجمالي العروض النشطة: 3 عروض. لديك طلب مقابلة واحد جديد! <a href="#interactions" class="text-primary text-decoration-none fw-bold">شاهد التفاعلات</a></p>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-borderless table-dark-neon table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">#ID</th>
+                        <th scope="col">عنوان العرض</th>
+                        <th scope="col">القطاع</th>
+                        <th scope="col">المبلغ المطلوب</th>
+                        <th scope="col">الحالة</th>
+                        <th scope="col">تاريخ الإرسال</th>
+                        <th scope="col">الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">001A</th>
+                        <td class="text-primary">تطبيق "بياناتي" لتحليل السوق</td>
+                        <td>FinTech</td>
+                        <td>$200,000</td>
+                        <td><span class="status-badge bg-success text-white">نشط (Active)</span></td>
+                        <td>2025-05-01</td>
+                        <td>
+                            <a href="edit_pitch.html?id=001A" class="btn btn-sm btn-outline-primary me-2">تعديل</a>
+                            <form action="delete_pitch.php" method="POST" style="display:inline;">
+                                <input type="hidden" name="pitch_id" value="001A">
+                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('هل أنت متأكد من حذف العرض؟')">حذف</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">002B</th>
+                        <td class="text-white">نظام الري الذكي بالاستشعار</td>
+                        <td>AgriTech</td>
+                        <td>$150,000</td>
+                        <td><span class="status-badge bg-warning text-dark">قيد المراجعة</span></td>
+                        <td>2025-05-15</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-dark me-2" disabled>تعديل</button>
+                            <button class="btn btn-sm btn-outline-secondary" disabled>حذف</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">003C</th>
+                        <td class="text-white">تطبيق توصيل الوجبات الفاخرة</td>
+                        <td>FoodTech</td>
+                        <td>$500,000</td>
+                        <td><span class="status-badge bg-danger text-white">مرفوض</span></td>
+                        <td>2025-04-10</td>
+                        <td>
+                             <button class="btn btn-sm btn-outline-primary me-2" disabled>إعادة إرسال</button>
+                            <button class="btn btn-sm btn-outline-secondary" disabled>حذف</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr class="my-5" id="interactions">
+        
+        <h2 class="section-header-neon">💬 تفاعلات المستثمرين الأخيرة</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            
+            <div class="col">
+                <div class="card p-3 h-100" style="background-color: #3d3d5e;">
+                    <p class="text-primary mb-1 fw-bold">طلب مقابلة استثمارية</p>
+                    <p class="text-white mb-2">من: <span class="text-success">صندوق التقنية السعودي</span></p>
+                    <p class="small text-muted mb-0">حول العرض: <a href="pitch_details.html?id=001A" class="text-primary text-decoration-none">تطبيق "بياناتي"</a></p>
+                    <p class="small text-muted">تاريخ: 2025-05-20</p>
+                    <button class="btn btn-sm btn-success mt-2">✉️ الرد وتحديد موعد</button>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card p-3 h-100" style="background-color: #3d3d5e;">
+                    <p class="text-primary mb-1 fw-bold">تعليق حول التقييم</p>
+                    <p class="text-white mb-2">من: <span class="text-success">مستثمر خاص (ID: 987)</span></p>
+                    <p class="small text-muted mb-0">حول العرض: <a href="pitch_details.html?id=001A" class="text-primary text-decoration-none">تطبيق "بياناتي"</a></p>
+                    <p class="small text-muted">الرسالة: "يرجى توضيح الأساس المنطقي لتقييم الـ Pre-Money المقترح."</p>
+                    <button class="btn btn-sm btn-outline-primary mt-2">✉️ الرد</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
